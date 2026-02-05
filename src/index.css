@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Lora';
+  src: url('./assets/fonts/Lora-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 300 700; /* Supports weights from Light to Bold */
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('./assets/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 100 900; /* Supports the full range of Inter weights */
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-inter: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-lora: "Lora", ui-serif, Georgia, serif;
+}
+
+:root {
+  --background: var(--color-stone-50);
+  --foreground: #111;
+  --color-hero-color: #f4f4f4;
+}
+
+html, body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter);
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  ::-webkit-scrollbar {
+    width: 8px; /* This sets the width */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent; 
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-zinc-700/50 rounded-full; /* Subtle dark color */
+    border: 2px solid transparent; /* Creates "padding" around the thumb */
+    background-clip: padding-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-zinc-600; 
+  }
+
+  * {
+    scrollbar-width: thin; 
+    scrollbar-color: theme('colors.zinc.700') transparent;
+  }
+}
+
+@layer components {
+  .container {
+    @apply flex flex-col px-3 sm:px-6 md:px-12 lg:px-28 xl:px-35 2xl:px-46;
+  }
+  h2 {
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-center;
+  }
+  h3 {
+    @apply text-xl md:text-2xl lg:text-3xl lg:font-medium text-center text-zinc-600 dark:text-zinc-300;
+  }
+  button {
+    @apply transition-colors hover:scale-[1.03] cursor-pointer;
+  }
+  img {
+    @apply object-cover;
+  }
+  .mask {
+    mask-image: linear-gradient(to right, transparent, black, black)
+  }
+}
