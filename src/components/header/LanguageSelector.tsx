@@ -3,17 +3,22 @@
 import { useState, useRef, useEffect } from 'react';
 import { ChevronDown, Globe } from 'lucide-react';
 import { cn } from '../../utils/cn';
+import { useTranslation } from 'react-i18next'; // Add this import
 
 const languages = [
-  { name: 'English', code: 'EN' },
-  { name: 'Français', code: 'FR' },
-  { name: 'Español', code: 'ES' },
+  { name: 'English', code: 'en' }, // Change to lowercase 'en'
+  { name: 'Français', code: 'fr' }, // Change to lowercase 'fr'
+  { name: 'Español', code: 'es' }, // Change to lowercase 'es'
 ];
 
 const LanguageSelector = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selected, setSelected] = useState(languages[0]);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const { i18n } = useTranslation(); // Get i18n instance
+  
+  // Get current language from i18n
+  const currentLang = i18n.language;
+  const selected = languages.find(lang => lang.code === currentLang) || languages[0];
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -26,6 +31,12 @@ const LanguageSelector = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  const handleLanguageChange = (langCode: string) => {
+    // This changes the language for the entire app
+    i18n.changeLanguage(langCode);
+    setIsOpen(false);
+  };
+
   return (
     <div className="relative inline-block text-left" ref={dropdownRef}>
       {/* Trigger Button */}
@@ -37,16 +48,19 @@ const LanguageSelector = () => {
           "text-slate-900 font-medium text-sm border border-transparent",
           isOpen && "border-blue-500/50 ring-2 ring-stone-500/10"
         )}
+        aria-label="Select language"
       >
         <Globe size={16} className="text-stone-500" />
-        <span>{selected.code}</span>
+        
+        <span>{selected.code.toUpperCase()}</span>
+
         <ChevronDown 
           size={14} 
           className={cn("transition-transform duration-300", isOpen && "rotate-180")} 
         />
       </button>
 
-      {/* Dropdown Menu - Aligned to the far end (right) */}
+      {/* Dropdown Menu */}
       {isOpen && (
         <ul 
           className={cn(
@@ -58,14 +72,11 @@ const LanguageSelector = () => {
           {languages.map((lang) => (
             <li key={lang.code}>
               <button
-                onClick={() => {
-                  setSelected(lang);
-                  setIsOpen(false);
-                }}
+                onClick={() => handleLanguageChange(lang.code)}
                 className={cn(
                   "block w-full text-left px-4 py-2.5 text-sm transition-colors",
-                  "hover:bg-stone-50",
-                  selected.code === lang.code 
+                  "hover:bg-blue-100",
+                  currentLang === lang.code 
                     ? "text-stone-600 font-semibold bg-stone-300/50" 
                     : "text-slate-700"
                 )}
