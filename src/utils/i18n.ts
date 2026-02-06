@@ -24,6 +24,7 @@ const resources = {
       'buy-now': "Buy Now",
       'verified-sales': 'verified sales',
       'sales': 'sales',
+      'rating': "rating",
       
       // Footer translations
       'footer-description': "Experience the power of natural skincare products infused with premium ingredients. Transform your skin with our carefully crafted formulas.",

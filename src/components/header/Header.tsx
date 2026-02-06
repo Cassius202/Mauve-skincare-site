@@ -1,8 +1,14 @@
+import { Sidebar } from "lucide-react";
 import { assets } from "../../assets/assets";
 import LanguageSelector from "./LanguageSelector";
 import Navigation from "./Navigation";
+import useProps from "../../hooks/useProps";
 
 const Header = () => {
+  const {setIsOpen} = useProps()
+  const toggleSidebar = () => {
+    setIsOpen(true)
+  };
   return (
     <div className="fixed z-40 w-screen justify-between h-16 px-4 sm:px-6 md:px-8 lg:px-14 flex items-center bg-stone-50/70 backdrop-blur-lg lg:bg-[#fefefe]/70">
       {/* Logo Section */}
@@ -20,9 +26,15 @@ const Header = () => {
         <Navigation />
       </nav>
 
-      <div>
+      <div className="flex items-center gap-4 max-md:mr-4">
         <LanguageSelector />
+        <button
+        onClick={toggleSidebar}
+        className='md:hidden hover:bg-slate-300/80 p-2 bg-slate-200/50 rounded-lg'>
+        <Sidebar size={20} />
+      </button>
       </div>
+      
     </div>
   );
 };

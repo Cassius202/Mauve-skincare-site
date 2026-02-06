@@ -10,7 +10,7 @@ const About = () => {
         <h3>{t("about-subtitle")}</h3>
       </div>
       <div>
-
+        
       </div>
     </section>
   );

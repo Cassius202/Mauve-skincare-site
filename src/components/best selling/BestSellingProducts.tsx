@@ -76,7 +76,7 @@ const BestSellingProducts = () => {
                 </div>
                 <span className="flex gap-2 mt-2 text-slate-700 items-center">
                   <FaStar className="text-amber-500" size={18} /> 
-                  {product.rating} rating
+                  {product.rating} {t('rating') || rating}
                 </span>
                 <button className="w-max my-1.5 px-4 py-2 hover:bg-blue-800 rounded-lg bg-blue-900 text-slate-50">
                   {t('buy-now')}

@@ -7,18 +7,26 @@ import productDesign1 from './product-design1.jpg'
 import productDesign2 from './product-design2.jpg'
 import productDesign3 from './product-design3.jpg'
 import type { BestSellingType } from './interface'
+import { Info, Mail, MessageSquare, Package, type LucideIcon } from 'lucide-react'
 
 export const assets = {
   HeroImg, logo, productImage, productDesign1, productDesign2, productDesign3, salesNumImage
 }
 
 // data/navigation.ts
-export const navLinks = [
-  { id: 'About', path: 'about' },
-  { id: 'Products', path: 'products' },
-  { id: 'Reviews', path: 'reviews' },
-  { id: 'Contact', path: 'contact' },
-]
+
+export interface LinkType {
+  id: string;
+  path: string;
+  icon: LucideIcon; // Correct type for Lucide components
+}
+
+export const navLinks: LinkType[] = [
+  { id: 'About', path: 'about', icon: Info },
+  { id: 'Products', path: 'products', icon: Package },
+  { id: 'Reviews', path: 'reviews', icon: MessageSquare },
+  { id: 'Contact', path: 'contact', icon: Mail },
+];
 
 export const webLink = 'https://beneathyourmask.com/';
 

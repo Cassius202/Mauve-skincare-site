@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import { assets } from "../../assets/assets";
 import { useTranslation } from "react-i18next";
 import { FaFacebookF, FaInstagram, FaTwitter, FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
@@ -32,10 +33,10 @@ const Footer = () => {
   }
 
   return (
-    <footer className="bg-gradient-to-br from-slate-800 to-slate-900 text-white mt-18">
+    <footer className="bg-linear-to-br from-slate-800 to-slate-900 text-white mt-18">
       {/* Main Footer Content */}
       <div className="w-full px-6 sm:px-10 md:px-16 lg:px-25 py-12 md:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 max-w-screen-xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 max-w-7xl mx-auto">
           
           {/* Brand Section */}
           <div className="space-y-4">
