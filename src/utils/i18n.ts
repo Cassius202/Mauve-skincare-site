@@ -44,7 +44,7 @@ const resources = {
       welcome: "Bienvenue à React et React-i18next",
       heroTitleProtect: "Protéger",
       heroTitleRepair: "Réparer",
-      heroTitleRevitalize: "Revitaliser",
+      heroTitleRevitalize: "Réparer",
       heroSubtitle: "Découvrez la puissance des soins à l'avocat",
       shopNow: "Acheter Maintenant",
       nav: {
@@ -60,6 +60,8 @@ const resources = {
       'best-sellers-subtitle': 'Produits Que Nos Clients Adorent',
       'buy-now': "Acheter Maintenant",
       'verified-sales': 'ventes vérifiées',
+      'sales': 'ventes', // Added
+      'rating': "note", // Added
       
       // Footer translations
       'footer-description': "Découvrez la puissance des produits de soin naturels infusés d'ingrédients premium. Transformez votre peau avec nos formules soigneusement élaborées.",
@@ -71,6 +73,7 @@ const resources = {
       'lotion': "Lotion",
       'face-cream': "Crème Visage",
       'body-lotion': "Lotion Corporelle",
+      'cosmetics': 'Cosmétiques' // Added
     }
   },
   es: {
@@ -94,6 +97,8 @@ const resources = {
       'best-sellers-subtitle': 'Productos Que Nuestros Clientes Aman',
       'buy-now': "Comprar Ahora",
       'verified-sales': 'ventas verificadas',
+      'sales': 'ventas', // Added
+      'rating': "puntuación", // Added
       
       // Footer translations
       'footer-description': "Experimenta el poder de los productos de cuidado natural infundidos con ingredientes premium. Transforma tu piel con nuestras fórmulas cuidadosamente elaboradas.",
@@ -105,6 +110,7 @@ const resources = {
       'lotion': "Loción",
       'face-cream': "Crema Facial",
       'body-lotion': "Loción Corporal",
+      'cosmetics': 'Cosméticos' // Added
     }
   }
 };
