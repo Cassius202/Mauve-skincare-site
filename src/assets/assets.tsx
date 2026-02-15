@@ -6,11 +6,12 @@ import salesNumImage from './salesImage.png'
 import productDesign1 from './product-design1.jpg'
 import productDesign2 from './product-design2.jpg'
 import productDesign3 from './product-design3.jpg'
+import aboutImg from './about-image.jpg'
 import type { BestSellingType } from './interface'
 import { Info, Mail, MessageSquare, Package, type LucideIcon } from 'lucide-react'
 
 export const assets = {
-  HeroImg, logo, productImage, productDesign1, productDesign2, productDesign3, salesNumImage
+  HeroImg, logo, productImage, productDesign1, productDesign2, productDesign3, salesNumImage, aboutImg
 }
 
 // data/navigation.ts

@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="w-full min-h-screen h-screen overflow-x-hidden overflow-y-auto relative isolate md:grid md:grid-cols-[55%_45%] lg:flex gap-x-5"
+      className="w-full min-h-screen overflow-x-hidden overflow-y-auto relative isolate md:grid md:grid-cols-[55%_45%] lg:flex gap-x-5"
     >
       <BackgroundImg />
 
@@ -37,19 +37,6 @@ const Hero = () => {
           <button className="bg-blue-500 w-max p-2 px-6 rounded-lg text-white mt-6 md:text-lg hover:bg-blue-600 transition-all hover:scale-105 duration-300 whitespace-nowrap">
             {t('shopNow')}
           </button>
-          
-          <div className="rounded-full p-2 pr-4 flex gap-2 items-center bg-blue-400/10 mt-14 lg:mt-8 border-blue-400 border max-sm:hidden">
-            <div className="h-7 overflow-hidden flex-shrink-0">
-              <LazyImage 
-                src={assets.salesNumImage} 
-                className="h-7" 
-                alt='products' 
-              />
-            </div>
-            <span className="text-base sm:text-lg text-gray-700 font-medium whitespace-nowrap">
-              1000+ <span>{t('sales')}</span>
-            </span>
-          </div>
         </div>
       </div>
 
